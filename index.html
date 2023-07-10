@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enbaba'nın Hikayesi</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .paragraflar {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .paragraf {
+        flex-basis: 30%;
+      }
+
+      .komiklik {
+        background-color: #f0f0f0;
+        padding: 10px;
+      }
+
+      .son {
+        background-color: #f8f8f8;
+        padding: 10px;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Enbaba'nın Hikayesi</h1>
+
+    <div class="paragraflar">
+      <p id="hikayeParagraf" class="paragraf">
+        Enbaba, kel bir adamdı. Şaşırtıcı bir şekilde, kaynanasıyla aynı evde
+        yaşıyordu. Ancak aralarında bir anlaşmazlık vardı. Kaynanası, enbabayı
+        sadece kel olduğu için uyuz oluyordu. Her fırsatta enbabaya çıkışır ve
+        onunla dalga geçerdi. Enbaba ise sessizce durumu izler ve kendi
+        düşüncelerine dalardı.
+      </p>
+      <p id="komiklikParagraf" class="paragraf komiklik"></p>
+      <p id="sonParagraf" class="paragraf son"></p>
+    </div>
+
+    <button id="komiklikButton">Komiklik</button>
+    <button id="sonButton">Son</button>
+
+    <script>
+      const komiklikler = [
+        'Bir gün, yangın tatbikatı sırasında enbaba hortumunu doğru şekilde kullanamayarak etrafa su sıçrattı.',
+        'Enbaba, itfaiye merkezinde yanlışlıkla yangın alarmını çalarak tüm ekiplerin paniklemesine sebep oldu.',
+        'Enbaba, itfaiye aracının anahtarını kilitlerken aracın camını kırdı ve herkesi gülmekten kendini alamadı.',
+        'Bir kedi kurtarma operasyonunda, enbaba ağaca çıkmak yerine ağacın altına düşerek herkesi güldürdü.',
+        'Enbaba, yangın tatbikatı sırasında takım elbise giyerek gelince herkes şaşkınlıkla ona baktı ve gülmemek için zor tutundu.',
+      ]
+
+      const sonlar = [
+        'Enbaba, komik olaylara rağmen kararlılığını korudu. İtfaiye eğitimlerine devam etti ve kendini sürekli geliştirmeye çalıştı. İnanılmaz bir azimle çalışan enbaba, zamanla becerilerini geliştirdi ve itfaiye ekibi arasında sevilen biri haline geldi. Kaynanası, enbabayı hala kelleştirmekten vazgeçmemiş olsa da, enbabanın itfaiye mesleğine olan tutkusu ve azmi herkesi etkiledi. Enbaba, beceriksizliğine rağmen insanları güldürmeye ve cesaretiyle örnek olmaya devam etti.',
+        'Enbaba, itfaiyeci olamadı ama sosyal medyada dijitalbaba olarak fenomen haline geldi. Komik videoları ve paylaşımlarıyla milyonlarca takipçiye ulaşarak herkesi güldürdü. Kaynanası ise onun dijital ününden dolayı gurur duydu ve artık daha saygılı davrandı.',
+        'Enbaba, beklenmedik bir şekilde bir yangın olayında kahramanlık sergiledi. Tüm ekiplerle birlikte alevler arasında cesurca ilerledi ve birçok kişiyi kurtardı. Bu olay, enbabanın gerçek bir kahraman olduğunu kanıtladı ve kaynanası da ona olan saygısını artırdı.',
+        'Enbaba, yangın tatbikatı sırasında itfaiye aracının direksiyonunu yanlışlıkla sola dönerek bir çiçekçi dükkanına girdi. Herkes kahkahalarla güldü ve enbaba mahcup bir şekilde dükkanı terk etti.',
+        'Enbaba, itfaiye eğitimlerindeki beceriksizlikleriyle herkesi güldürmeye devam etti. Herkes onu gülmekten alamadı.',
+      ]
+
+      const komiklikParagraf = document.getElementById('komiklikParagraf')
+      const sonParagraf = document.getElementById('sonParagraf')
+
+      document
+        .getElementById('komiklikButton')
+        .addEventListener('click', function () {
+          const randomIndex = Math.floor(Math.random() * komiklikler.length)
+          komiklikParagraf.textContent = komiklikler[randomIndex]
+        })
+
+      document
+        .getElementById('sonButton')
+        .addEventListener('click', function () {
+          const randomIndex = Math.floor(Math.random() * sonlar.length)
+          sonParagraf.textContent = sonlar[randomIndex]
+        })
+    </script>
+  </body>
+</html>
